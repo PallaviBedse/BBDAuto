@@ -1,3 +1,5 @@
+import java.util.Set;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -8,6 +10,8 @@ import org.openqa.selenium.support.ui.Select;
 
 public class Assig_4 {
 
+	
+	
 	public static void main(String[] args) throws InterruptedException {
 		// TODO Auto-generated method stub
 
@@ -27,12 +31,12 @@ public class Assig_4 {
      
      WebElement sortBy = driver.findElement(By.xpath("//div[@class='sort-sortBy']"));
      Actions actions2 = new Actions(driver);
-     actions.moveToElement(sortBy);
+     actions.moveToElement(sortBy).build().perform();
      
-     WebElement Popularity = driver.findElement(By.xpath("//label[normalize-space()='Popularity']"));
-     actions2.moveToElement(Popularity);
-     actions2.click();
-     Thread.sleep(2000);
+     WebElement Popularity = driver.findElement(By.xpath("(//*[@class='sort-label '])[2]"));
+     actions2.click(Popularity).build().perform();
+     //actions2.click();
+     Thread.sleep(5000);
     
 		//scroll
         JavascriptExecutor js=(JavascriptExecutor) driver;
@@ -48,20 +52,32 @@ public class Assig_4 {
 		//  Select(driver.findElement(By.xpath("//ul[@class='discount-list']")));
 		//  select4.selectByIndex(3);
 		  
-		 WebElement E = (driver.findElement(By.xpath("(//div[@class='common-checkboxIndicator'])[2]")));
-		 E.isSelected();
+		 WebElement E = (driver.findElement(By.xpath("//label[text()='Roadster']")));
+		 E.click();
 		 
-		 WebElement E1 = (driver.findElement(By.xpath("(//label[@class='common-customCheckbox vertical-filters-label'])[7]")));
-		 E1.isSelected();
+		// WebElement E1 = (driver.findElement(By.xpath("//label[text()='Rs. 624 to Rs. 1049']")));
+		// E1.click();
 		
-	     WebElement E2 = (driver.findElement(By.xpath("(//label[@class='common-customRadio vertical-filters-label'])[1]")));
-		 E2.isSelected();
+	     WebElement E2 = (driver.findElement(By.xpath("//label[text()='40% and above']")));
+		 E2.click();
 		 
 		// selct product
 		 driver.findElement(By.xpath("//ul[@class='results-base']//li[1]")).click();
-		//select size
-		 driver.findElement(By.xpath("//div[@id='sizeButtonsContainer']//div[1]//div[1]//button[1]")).click();
+		 
+		 //driver.switchTo().newWindow(Web);
+		 //driver.switchTo().window(driver.getTitle());
+		 
+		 Set<String> Windeow = driver.getWindowHandles();
+		for (String string : Windeow) {
+			driver.switchTo().window(string);
+		}
+		Thread.sleep(5000);
+		//driver.switchTo().alert().accept();
+		//Thread.sleep(2000);
 		
+		//select size
+		 driver.findElement(By.xpath("(//button[@class='size-buttons-size-button size-buttons-size-button-default'])[1]")).click();
+		 //driver.findElement(By.xpath("//button[@class='size-buttons-size-button size-buttons-size-button-default'])[2]")).click();
 		 //div[text()='ADD TO BAG']
 		 
 		 driver.findElement(By.cssSelector(".pdp-add-to-bag.pdp-button.pdp-flex.pdp-center")).click();
