@@ -74,6 +74,7 @@ public class Assig_4 {
 		 //ad to bag
 		 driver.findElement(By.cssSelector(".pdp-add-to-bag.pdp-button.pdp-flex.pdp-center")).click();
 		//go to bag
+		 
 		 driver.findElement(By.xpath("//span[text()='GO TO BAG']")).click();
 		 //move to wishlist
 		 driver.findElement(By.xpath("//button[text()='MOVE TO WISHLIST']")).click();
