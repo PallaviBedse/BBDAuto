@@ -79,7 +79,7 @@ public class Assig_4 {
 		 //move to wishlist
 		 driver.findElement(By.xpath("//button[text()='MOVE TO WISHLIST']")).click();
 		 
-		 driver.close();
+		 //driver.close();
 		 
 }
 }
