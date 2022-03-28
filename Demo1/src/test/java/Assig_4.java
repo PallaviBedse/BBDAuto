@@ -42,21 +42,13 @@ public class Assig_4 {
         JavascriptExecutor js=(JavascriptExecutor) driver;
 		js.executeScript("window.scrollBy(0,10)");
 		   
-		 // Select select2= new Select(driver.findElement(By.xpath("(//div[@class='common-checkboxIndicator'])[1]")));
-		 //select2.selectByVisibleText("Tops");
 		 
-		 // Select select3= new Select(driver.findElement(By.xpath("//div[@class='vertical-filters-filters brand-container']")));
-		//  select3.selectByIndex(1);
-		 
-		//  Select select4= new
-		//  Select(driver.findElement(By.xpath("//ul[@class='discount-list']")));
-		//  select4.selectByIndex(3);
 		  
 		 WebElement E = (driver.findElement(By.xpath("//label[text()='Roadster']")));
 		 E.click();
 		 
-		// WebElement E1 = (driver.findElement(By.xpath("//label[text()='Rs. 624 to Rs. 1049']")));
-		// E1.click();
+		WebElement E1 = (driver.findElement(By.xpath("//label[text()='Rs. 624 to Rs. 1049']")));
+	    E1.click();
 		
 	     WebElement E2 = (driver.findElement(By.xpath("//label[text()='40% and above']")));
 		 E2.click();
@@ -77,9 +69,9 @@ public class Assig_4 {
 		
 		//select size
 		 driver.findElement(By.xpath("(//button[@class='size-buttons-size-button size-buttons-size-button-default'])[1]")).click();
-		 //driver.findElement(By.xpath("//button[@class='size-buttons-size-button size-buttons-size-button-default'])[2]")).click();
+		
 		 //div[text()='ADD TO BAG']
-		 
+		 //ad to bag
 		 driver.findElement(By.cssSelector(".pdp-add-to-bag.pdp-button.pdp-flex.pdp-center")).click();
 		//go to bag
 		 driver.findElement(By.xpath("//span[text()='GO TO BAG']")).click();
